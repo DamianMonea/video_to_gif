@@ -7,7 +7,7 @@ You can install 'ffmpeg' in several ways:
 
 If you are prompted to accept anything when installing 'ffmpeg', you can accept it by pressing 'y' and then the ENTER key.
 
-# How to run the program:
+# How to run the script:
 
 ### Step 1:
 
@@ -20,19 +20,21 @@ Run the script with one of the following commands:
 Convert everything in the 'input' folder to GIFs with this command:
 
 ```python
-python3 main.py
+python3 main.py -i <input_folder> -o <output_folder>
 ```
+
+It is **required** to use the '-i' and '-o' parameters to specify the input and output paths for the files.
 
 Convert everything in the 'input' folder to GIFs AND delete the input files with this command:
 
 ```python
-python3 main.py -c
+python3 main.py -i <input_folder> -o <output_folder> -c
 ```
 
 Convert everything in the 'input' folder to GIFs with a specified target FPS:
 
 ```python
-python3 main.py --fps 60
+python3 main.py -i <input_folder> -o <output_folder> --fps 60
 ```
 
 In the previous command we are specifying the FPS to be 60, but you can specify other values and if you don't pass this parameter, the default FPS value is 30FPS.
@@ -40,7 +42,7 @@ In the previous command we are specifying the FPS to be 60, but you can specify 
 Also, you can combine the two parameters if you want/need to:
 
 ```python
-python3 main.py -c --fps 60
+python3 main.py -i <input_folder> -o <output_folder> -c --fps 60
 ```
 
 This will create GIFs with the target FPS and then will delete the input files from the input folder.
